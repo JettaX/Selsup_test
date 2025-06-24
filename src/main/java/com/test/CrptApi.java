@@ -16,14 +16,14 @@ import java.util.Deque;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class TrueSignApi {
+public class CrptApi {
     private static final String BASE_URL = "https://ismp.crpt.ru/api/v3";
     private final HttpClient httpClient = HttpClient.newHttpClient();
     private final String accessToken;
     private final RateLimiter limiter;
     private final ObjectMapper objectMapper;
 
-    public TrueSignApi(TimeUnit timeUnit, int requestLimit, String accessToken) {
+    public CrptApi(TimeUnit timeUnit, int requestLimit, String accessToken) {
         limiter = new RateLimiter(requestLimit, timeUnit);
         objectMapper = new ObjectMapper();
         this.accessToken = accessToken;
